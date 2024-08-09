@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="sim.css">
+<html>
+  
+<body>
+  <h1 style="color: green">
+    Troca de linguas
+  </h1>
+    
+  <p>
+    Clique nos botões para mudar a linguagem do texto abaixo.
+  </p>
+  
+  <button onclick="changeLanguage('eng')">
+    Português
+    </button>
+  <button onclick="changeLanguage('es')">
+    English
+  </button>
+  
+  <div class="texto-apresenta">
+    <div class="paragrafo1"> </div><br>
+
+  <p id="siteContent">
+    Sobre nós: 
+    Nossa equipe é de Cascavel-PR, do colégio CEEP Pedro Boaretto Neto, do curso de Desenvolvimento de Sistemas.
+    Quando nos deparamos com o tema 'Agrinho: do campo à cidade, colhendo oportunidades', imediatamente pensamos qual seria a melhor forma de agrupar agronegócio e inovação tecnológica; em analogia a este contexto, surgiu a ideia de agricultura sustentável.
+    Com esse tema, foi mostrado propostas de como a produção pode ficar em comunhão com a natureza sem precisar prejudicar a fauna e a flora de nosso país.
+  </p>
+  
+  </div>
+  <script>
+  
+    function changeLanguage(lang) {
+      location.hash = lang;
+      location.reload();
+    }
+  
+    var language = {
+      eng: {
+        welcome: "Sobre nós: " +
+        "Nossa equipe é de Cascavel-PR, do colégio CEEP Pedro Boaretto Neto, do curso de Desenvolvimento de Sistemas." +
+        "Quando nos deparamos com o tema Agrinho: do campo à cidade, colhendo oportunidades , imediatamente pensamos qual seria a melhor forma de agrupar agronegócio e inovação tecnológica; em analogia a este contexto, surgiu a ideia de agricultura sustentável." +
+        "Com esse tema, foi mostrado propostas de como a produção pode ficar em comunhão com a natureza sem precisar prejudicar a fauna e a flora de nosso país."
+      },
+      es: {
+        welcome: "About us: " +
+        "Our team is from Cascavel-PR, from the CEEP Pedro Boaretto Neto school, on the Systems Development course." + 
+        "When we came across the theme 'Agrinho: from the countryside to the city', harvesting opportunities, We immediately thought about what would be the best way to group agribusiness and technological innovation; in analogy to this context, the idea of ​​sustainable agriculture emerged." +
+        "With this theme, proposals were shown on how production can be in communion with nature without having to harm the fauna and flora of our country."
+      }
+    };
+  
+    if (window.location.hash) {
+  
+      if (window.location.hash == "#es") {
+        siteContent.textContent =
+          language.es.welcome;
+      }
+    }
+  </script>
+</body>
+  
+</html>
